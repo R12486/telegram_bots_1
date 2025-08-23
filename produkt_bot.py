@@ -13,7 +13,7 @@ ER_ID = "-1002668725339"
 while True:
     try:
         #holodilnik = {"/iogurti":"🟩", "/konserva":"🟥", "/ris":"🟨"}
-        with open('.venv/holodilnik.txt', 'r', encoding='utf-8') as file:
+        with open('holodilnik.txt', 'r', encoding='utf-8') as file:
             holodilnik = json.load(file)
 
 
@@ -82,7 +82,7 @@ while True:
                     holodilnik["/" + message.text] = "🟥"
                     mode = "holodilnik"
                     bot.reply_to(message, str(holodilnik))
-            with open('.venv/holodilnik.txt', 'w', encoding='utf-8') as file:
+            with open('holodilnik.txt', 'w', encoding='utf-8') as file:
                 json.dump(holodilnik, file, ensure_ascii=False, indent=4)
 
 
